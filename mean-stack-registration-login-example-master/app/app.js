@@ -24,6 +24,34 @@
                 controller: 'Account.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'account' }
+            })           
+            .state('diagnosis', {
+                url: '/diagnosis',
+                templateUrl: 'diagnosis/index.html',
+                controller: 'Diagnosis.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'diagnosis' }
+            })
+            .state('treatment', {
+                url: '/treatment',
+                templateUrl: 'treatment/index.html',
+                controller: 'Treatment.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'treatment' }
+            })
+            .state('recovery', {
+                url: '/recovery',
+                templateUrl: 'recovery/index.html',
+                controller: 'Recovery.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'recovery' }
+            })
+            .state('medicalhistory', {
+                url: '/medicalhistory',
+                templateUrl: 'medicalhistory/index.html',
+                controller: 'MedicalHistory.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'medicalhistory' }
             });
     }
 

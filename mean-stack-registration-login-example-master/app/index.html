@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>MEAN Stack User Registration and Login Example Application</title>
+    <title>Digital Patient Companion</title>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="app-content/app.css" rel="stylesheet" />
@@ -13,11 +13,23 @@
         <ul class="nav nav-tabs">
             <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Home</a></li>
             <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>
-            <li><a href="/login" target="_self">Logout</a></li>
+            <li ng-class="{active: activeTab === 'medicalhistory'}"><a ui-sref="medicalhistory">Medical History</a></li>
+            <li ng-class="{active: activeTab === 'diagnosis'}"><a ui-sref="diagnosis">Diagnosis</a></li>
+            <li ng-class="{active: activeTab === 'treatment'}"><a ui-sref="treatment">Treatment</a></li>
+            <li ng-class="{active: activeTab === 'recovery'}"><a ui-sref="recovery">Recovery</a></li>
+            
         </ul>
         <div class="flash-message" ng-if="flash">
             <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
         </div>
+        <div data-role="page" style="position:fixed;right:50px;top:40px;height:100px;size:80px;">
+                <div data-role="header">
+                    <label class="logoutLblPos">
+                        <a href="/login" target="_self" style="size: 200px">Logout</a>
+                        </label>
+                    
+                </div>
+                </div>
     </header>
 
     <!-- main -->
