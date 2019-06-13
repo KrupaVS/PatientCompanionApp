@@ -6,32 +6,32 @@ var Q = require('q');
 var mongo = require('mongoskin');
 var db = mongo.db(config.connectionString, { native_parser: true });
 db.bind('users');
-var patientSchema= new Schema({
-    firstName: {type: String},
-    lastName: {type: String},
-    username: {type: String},
-    Age:{type: String},
-    Dob: {type:Date},
-    contactDetails: [{
-                        phoneNumber:{Type: Number},
-                        emailId:{Type: String},                
-                    }],
-    medicalhistory: [{
-                        updatedDate:{Type: Date},
-                        age:{type: Number},
-                        weight: {type: String},
-                        height:{type: String},
-                        bmi:{type: String},
-                        systolicBp:{type: String},
-                        diastolicBp:{type: String},
-                        bloodGroup:{type: String}
-                    }],
-    diagnosis: {type: String},
-    recovery: {type: String},
-    treatment: {type: String},
-  }); 
+// var patientSchema= new Schema({
+//     firstName: {type: String},
+//     lastName: {type: String},
+//     username: {type: String},
+//     Age:{type: String},
+//     Dob: {type:Date},
+//     contactDetails: [{
+//                         phoneNumber:{Type: Number},
+//                         emailId:{Type: String},                
+//                     }],
+//     medicalhistory: [{
+//                         updatedDate:{Type: Date},
+//                         age:{type: Number},
+//                         weight: {type: String},
+//                         height:{type: String},
+//                         bmi:{type: String},
+//                         systolicBp:{type: String},
+//                         diastolicBp:{type: String},
+//                         bloodGroup:{type: String}
+//                     }],
+//     diagnosis: {type: String},
+//     recovery: {type: String},
+//     treatment: {type: String},
+//   }); 
 
-  module.exports = mongoose.model('users', patientSchema);
+//   module.exports = mongoose.model('users', patientSchema);
   
 var service = {};
 
