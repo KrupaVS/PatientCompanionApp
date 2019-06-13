@@ -1,25 +1,64 @@
-﻿<h1>My Account</h1>
+﻿<Style>
+#patients {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#patients td, #patients th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#patients tr:nth-child(even){background-color: #f2f2f2;}
+
+#patients tr:hover {background-color: #ddd;}
+
+#patients th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</Style>
+<h1>My medical History</h1>
 <div class="form-container">
     <form method="post">
-        <div class="form-group">
-            <label for="firstName">Age</label>
-            <input type="text" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-        </div>
-        <div class="form-group">
-            <label for="lastName">Date Of Birth</label>
-            <input type="text" id="lastName" class="form-control" ng-model="vm.user.lastName" required />
-        </div>
-        <div class="form-group">
-            <label for="username">Gender</label>
-            <input type="text" id="username" class="form-control" ng-model="vm.user.username" required />
-        </div>
-        <div class="form-group">
-            <label for="password">Allergies</label>
-            <input type="password" id="password" class="form-control" ng-model="vm.user.password" />
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" ng-click="vm.saveUser()">Save</button>
-            <button class="btn btn-danger" ng-click="vm.deleteUser()">Delete</button>
-        </div>
+        
+                        <table id="patients">
+                                <tr>
+                                  <td>Updated On</td>
+                                  <td>{{db.user.medicalhistory.medicalhistory.UpdatedDate}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Age</td>
+                                  <td>{{db.user.medicalhistory.medicalhistory.Age}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Blood group</td>
+                                  <td>{{db.user.medicalhistory.medicalhistory.bloodgroup}}</td>
+                                </tr>
+                                <tr>
+                                  <td>height</td>
+                                  <td>{{db.user.medicalhistory.medicalhistory.height}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Wieght</td>
+                                  <td>{{db.user.medicalhistory.medicalhistory.weight}}</td>
+                                </tr>
+                                <tr>
+                                  <td>BMI</td>
+                                  <td>{{db.user.medicalhistory.medicalhistory.bmi}}</td>
+                                </tr>
+                                <tr>
+                                        <td>Systolic BP</td>
+                                        <td>{{db.user.medicalhistory.medicalhistory.systolicBp}}</td>
+                                      </tr>
+                                <tr>
+                                            <td>Diastolic Bp</td>
+                                            <td>{{db.user.medicalhistory.medicalhistory.diastolicBp}}</td>
+                                          </tr>
+                              </table>
     </form>
 </div>
