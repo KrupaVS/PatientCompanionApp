@@ -39,13 +39,6 @@
                 controllerAs: 'vm',
                 data: { activeTab: 'treatment' }
             })
-            .state('recovery', {
-                url: '/recovery',
-                templateUrl: 'recovery/index.html',
-                controller: 'Recovery.IndexController',
-                controllerAs: 'vm',
-                data: { activeTab: 'recovery' }
-            })
             .state('medicalhistory', {
                 url: '/medicalhistory',
                 templateUrl: 'medicalhistory/index.html',

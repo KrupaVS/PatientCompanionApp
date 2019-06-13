@@ -6,7 +6,33 @@ var Q = require('q');
 var mongo = require('mongoskin');
 var db = mongo.db(config.connectionString, { native_parser: true });
 db.bind('users');
+var patientSchema= new Schema({
+    firstName: {type: String},
+    lastName: {type: String},
+    username: {type: String},
+    Age:{type: String},
+    Dob: {type:Date},
+    contactDetails: [{
+                        phoneNumber:{Type: Number},
+                        emailId:{Type: String},                
+                    }],
+    medicalhistory: [{
+                        updatedDate:{Type: Date},
+                        age:{type: Number},
+                        weight: {type: String},
+                        height:{type: String},
+                        bmi:{type: String},
+                        systolicBp:{type: String},
+                        diastolicBp:{type: String},
+                        bloodGroup:{type: String}
+                    }],
+    diagnosis: {type: String},
+    recovery: {type: String},
+    treatment: {type: String},
+  }); 
 
+  module.exports = mongoose.model('users', patientSchema);
+  
 var service = {};
 
 service.authenticate = authenticate;
@@ -121,6 +147,10 @@ function update(_id, userParam) {
             firstName: userParam.firstName,
             lastName: userParam.lastName,
             username: userParam.username,
+            medicalhistory: userParam.medicalhistory.bloodgroup,
+            diagnosis: userParam.diagnosis,
+            recovery: userParam.recovery,
+            treatment: userParam.treatment
         };
 
         // update password if it was entered

@@ -5,7 +5,7 @@
         .module('app')
         .controller('Diagnosis.IndexController', Controller);
 
-    function Controller($window, UserService, FlashService) {
+    function Controller($window, UserService) {
         var vm = this;
 
         vm.user = null;
