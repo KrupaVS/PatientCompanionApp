@@ -10,16 +10,26 @@
     <form method="post">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" value="<%= locals.username || '' %>" class="form-control" />
+            <input type="text" name="username" id="username" value="<%= locals.username || '' %>" class="form-control"  />
         </div>
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" name="password" id="password" class="form-control" />
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary" onclick="OnLoginClick()" >Login</button>
             <a href="/register" class="btn btn-link">Register</a>
         </div>
     </form>
 </div>
 <%- include('partials/footer') %>
+<script type="text/javascript">
+function OnLoginClick()
+{
+//     alert("UserName : login start ");
+// var one=$("#username").value;
+localStorage["username"] = document.getElementById("username").value;
+               // sessionStorage.setItem("username",document.getElementById("username").value);
+                //alert("UserName : login "+document.getElementById("username").value);
+}
+</script>

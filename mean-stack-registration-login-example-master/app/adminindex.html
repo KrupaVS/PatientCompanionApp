@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html>
- 
 <head>
     <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -80,49 +79,17 @@ h6{
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="app-content/app.css" rel="stylesheet" />
 </head>
-<body class="container" onload="javascript:OnLoad()">
-    <script type="text/javascript">
-   function OnLoad()
-    {
-
-        var userName =localStorage["username"];
- 
-      if(userName=='admin')
-      {
-      
-document.getElementById("admintab").style.display = "block";
-        //$("#admintab").show();
-       // $("#pateinttab").hide();
-      }
-      else
-      {
-        document.getElementById("pateinttab").style.display = "block";
-        //$("#admintab").hide();
-       // $("#pateinttab").show();
-      }
-    }
-      
-        </script>
+<body class="container">
     <!-- header -->
     <header >
-                  <div  id="pateinttab" class="patient" style="display:none;position:relative;top:50px;height:100px;size:80px;">
+                  <div style="position:relative;top:50px;height:100px;size:80px;">
                         <nav class="tabs"> 
                           <div class="selector"></div>
                           <a ui-sref="home" class="active">Home</a>
                           <a ui-sref="account" class="active"></i>Account</a>
-                          <a ui-sref="medicalhistory" class="active"></i>Medical History</a>
-                          <a ui-sref="diagnosis" class="active"></i>Diagnosis</a>
-                          <a ui-sref="treatment" class="active"></i>Treatment</a>
+                          <a ui-sref="medicalhistory" class="active"></i>Patient Search</a>
                         </nav>
-                  </div>
-                            <div id="admintab" class="admin" style=" display:none; position:relative;top:50px;height:100px;size:80px;">
-                                <nav class="tabs"> 
-                                  <div class="selector"></div>
-                                  <a ui-sref="home" class="active">Home</a>
-                                  <a ui-sref="account" class="active"></i>Account</a>
-                                  <a ui-sref="medicalhistory" class="active"></i>Patient Search</a>
-                                </nav>
-                              </div>
+                        <div>
         <div class="flash-message" ng-if="flash">
             <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
         </div>

@@ -29,8 +29,20 @@ router.post('/', function (req, res) {
             return res.render('login', { error: body, username: req.body.username });
         }
 
+        if(req.body.username == "admin")
+        {
+ // save JWT token in the session to make it available to the angular app
+ req.session.token = body.token;
+
+
+ // redirect to returnUrl
+ var returnUrl = './adminindex.html';
+ res.redirect(returnUrl);
+
+        }
         // save JWT token in the session to make it available to the angular app
         req.session.token = body.token;
+
 
         // redirect to returnUrl
         var returnUrl = req.query.returnUrl && decodeURIComponent(req.query.returnUrl) || '/';
