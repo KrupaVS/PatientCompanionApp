@@ -1,6 +1,78 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+h2{
+  margin:0px;
+  text-transform: uppercase;
+}
+
+h6{
+  margin:0px;
+  color:#777;
+}
+
+.wrapper{
+  text-align:center;
+  margin:5px auto;
+}
+
+.tabs{
+  margin-top:10px;
+  font-size:15px;
+  padding:0px;
+  list-style:none;
+  background:#fff;
+  box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+  display:inline-block;
+  border-radius:50px;
+  position:relative;
+  tab-size: 1000px;
+}
+
+.tabs a{
+  text-decoration:none;
+  color: #777;
+  text-transform:uppercase;
+  padding:10px 20px;
+  display:inline-block;
+  position:relative;
+  z-index:1;
+  transition-duration:0.6s;
+}
+
+.tabs a.active{
+  color:rgb(65, 63, 63);
+}
+
+.tabs a i{
+  margin-right:5px;
+}
+
+.tabs .selector{
+  height:100%;
+  display:inline-block;
+  position:absolute;
+  left:0px;
+  top:0px;
+  z-index:1;
+  border-radius:100px;
+  transition-duration:0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  background: #8294e5;
+  background: -moz-linear-gradient(45deg, #8294e5 0%,#565db8 100%);
+  background: -webkit-linear-gradient(45deg, #8294e5 0%,#565db8 100%);
+  background: linear-gradient(45deg, #8294e5 0%,#565db8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+}
+    </style>
     <meta charset="utf-8" />
     <title>Digital Patient Companion</title>
 
@@ -9,16 +81,17 @@
 </head>
 <body class="container">
     <!-- header -->
-    <header>
-        <ul class="nav nav-tabs">
-            <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Home</a></li>
-            <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>
-            <li ng-class="{active: activeTab === 'medicalhistory'}"><a ui-sref="medicalhistory">Medical History</a></li>
-            <li ng-class="{active: activeTab === 'diagnosis'}"><a ui-sref="diagnosis">Diagnosis</a></li>
-            <li ng-class="{active: activeTab === 'treatment'}"><a ui-sref="treatment">Treatment</a></li>
-            <li ng-class="{active: activeTab === 'recovery'}"><a ui-sref="recovery">Recovery</a></li>
-            
-        </ul>
+    <header >
+                  <div style="position:relative;top:50px;height:100px;size:80px;">
+                        <nav class="tabs"> 
+                          <div class="selector"></div>
+                          <a ui-sref="home" class="active">Home</a>
+                          <a ui-sref="account" class="active"></i>Account</a>
+                          <a ui-sref="medicalhistory" class="active"></i>Medical History</a>
+                          <a ui-sref="diagnosis" class="active"></i>Diagnosis</a>
+                          <a ui-sref="treatment" class="active"></i>Treatment</a>
+                        </nav>
+                        <div>
         <div class="flash-message" ng-if="flash">
             <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
         </div>

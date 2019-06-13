@@ -40,7 +40,7 @@
 }
         </Style>
         </head>
-        <h1>My medical History</h1>
+        <h1>My Treatment</h1>
         <div class="form-container">
             <form method="post">
                 
@@ -48,20 +48,23 @@
                                         <tr>
                                                 <th>Medical condition</th>
                                                 <th>Treatment Start Date</th>
+                                                <th>Treatment details</th>
                                                 <th>Last visit date</th>
-                                                <th>Recovery results</th>
-                                                <th>Test Reports</th>
+                                                <th>Recovery status</th>
+                                                <th>Test results</th>
                                               </tr>
                                         <tr>
-                                          <td>Sugar Test</td>
+                                          <td>Diabetic</td>
                                           <td>Diabetic +ve</td>
+                                          <td></td>
                                           <td>Date</td>
                                           <td>{{vm.user.diagnosis.disease}}</td>
                                           <td><button class="btn"><i class="fa fa-download"></i> Download</button></td>
                                         </tr>
                                         <tr>
-                                          <td>Thyroid Test</td>
+                                          <td>Thyroid</td>
                                           <td>Thyroid -ve</td>
+                                          <td></td>
                                           <td>Date</td>
                                           <td>{{vm.user.diagnosis.date}}</td>
                                           <td><button class="btn"><i class="fa fa-download" style="height: 20px"></i> Download</button></td>
